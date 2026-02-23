@@ -386,6 +386,19 @@ body {
     padding: 4rem 0;
 }
 
+.profile-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
 .about-section {
     margin-bottom: 3rem;
 }
