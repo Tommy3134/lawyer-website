@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>易拉宝 - 留学生法律服务（C端）</title>
+    <style>
+        @page {
+            size: 800mm 2000mm;
+            margin: 0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 800px;
+            height: 2000px;
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background: #0a1628;
+            color: #ffffff;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(193,155,96,0.08) 0%, rgba(193,155,96,0.02) 50%, rgba(193,155,96,0.06) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .line-accent {
+            position: absolute;
+            top: 0;
+            left: 60px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(193,155,96,0) 0%, rgba(193,155,96,0.3) 10%, rgba(193,155,96,0.3) 90%, rgba(193,155,96,0) 100%);
+        }
+
+        .header {
+            padding: 60px 80px 30px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .firm-name {
+            font-size: 18px;
+            color: #c19b60;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+        .divider-gold {
+            width: 60px;
+            height: 2px;
+            background: #c19b60;
+            margin: 15px 0;
+        }
+
+        .lawyer-section {
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .lawyer-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #c19b60;
+        }
+        .lawyer-info h1 {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 8px;
+        }
+        .lawyer-info .title {
+            font-size: 15px;
+            color: #c19b60;
+            line-height: 1.8;
+        }
+
+        .tagline {
+            padding: 25px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .tagline h2 {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .tagline h2 span {
+            color: #c19b60;
+        }
+        .tagline-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+
+        .empathy {
+            padding: 15px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .empathy-box {
+            background: rgba(193,155,96,0.08);
+            border-left: 4px solid #c19b60;
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+        }
+        .empathy-box p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .services {
+            padding: 20px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .section-title {
+            font-size: 22px;
+            color: #c19b60;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(193,155,96,0.3);
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .scene-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(193,155,96,0.1);
+        }
+        .scene-num {
+            min-width: 32px;
+            height: 32px;
+            background: #c19b60;
+            color: #0a1628;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+        .scene-content h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        .scene-content .en {
+            font-size: 12px;
+            color: rgba(193,155,96,0.7);
+            margin-bottom: 4px;
+        }
+        .scene-content p {
+            font-size: 12.5px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+        }
+
+        .promise {
+            padding: 20px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .promise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .promise-item {
+            background: rgba(193,155,96,0.08);
+            border: 1px solid rgba(193,155,96,0.2);
+            border-radius: 8px;
+            padding: 14px 16px;
+            text-align: center;
+        }
+        .promise-item .icon {
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+        .promise-item h4 {
+            font-size: 15px;
+            color: #c19b60;
+            margin-bottom: 3px;
+        }
+        .promise-item p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(193,155,96,0.1);
+            border-top: 2px solid #c19b60;
+            padding: 30px 80px;
+            z-index: 1;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .contact-item {
+            font-size: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        .contact-item strong {
+            color: #c19b60;
+        }
+        .qr-placeholder {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #c19b60;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #c19b60;
+            text-align: center;
+        }
+        .address {
+            margin-top: 10px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-accent"></div>
+    <div class="line-accent"></div>
+
+    <!-- 顶部 -->
+    <div class="header">
+        <div class="firm-name">上 海 申 浩 律 师 事 务 所</div>
+        <div class="divider-gold"></div>
+    </div>
+
+    <!-- 律师信息 -->
+    <div class="lawyer-section">
+        <img src="profile.jpg" class="lawyer-photo" alt="史健达律师">
+        <div class="lawyer-info">
+            <h1>史健达 律师</h1>
+            <div class="title">
+                中国（上海）执业律师｜IBA 成员<br>
+                中澳法学双硕士
+            </div>
+        </div>
+    </div>
+
+    <!-- 核心标语 -->
+    <div class="tagline">
+        <h2>留学生<span>法律服务</span></h2>
+        <p class="tagline-sub">中外律师联合办案 · 全程中文陪同</p>
+    </div>
+
+    <!-- 共情文案 -->
+    <div class="empathy">
+        <div class="empathy-box">
+            <p>在海外遇事不敢求助？不熟悉法律、英语不够自信、也不认识律师？<br>其实，这些都可以走法律途径解决。</p>
+        </div>
+    </div>
+
+    <!-- 服务场景 -->
+    <div class="services">
+        <div class="section-title">我们能帮你</div>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <div class="scene-num">1</div>
+                <div class="scene-content">
+                    <h3>骚扰 / 跟踪</h3>
+                    <div class="en">Harassment / Stalking</div>
+                    <p>申请保护令 · 协助报警取证 · 学校安全措施</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">2</div>
+                <div class="scene-content">
+                    <h3>性侵 / 性骚扰</h3>
+                    <div class="en">Sexual Violence / Assault</div>
+                    <p>申请禁令 · 协助控告 · 追究刑责 · 获得赔偿</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">3</div>
+                <div class="scene-content">
+                    <h3>网暴 / 诽谤 / 私密影像外流</h3>
+                    <div class="en">Online Abuse / Defamation / IBA</div>
+                    <p>取证保全 · 平台投诉 · 申请禁令 · 民刑途径</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">4</div>
+                <div class="scene-content">
+                    <h3>租房押金与退房纠纷</h3>
+                    <div class="en">Tenancy Deposit Dispute</div>
+                    <p>押金核验 · 律师函 · 仲裁申诉 · 追回扣款</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">5</div>
+                <div class="scene-content">
+                    <h3>电信诈骗 / 虚拟绑架</h3>
+                    <div class="en">Scams / Virtual Kidnapping</div>
+                    <p>快速止付 · 报案指引 · 多方联动 · 后续维权</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">6</div>
+                <div class="scene-content">
+                    <h3>怀孕 / 子女抚养</h3>
+                    <div class="en">Pregnancy & Child Custody</div>
+                    <p>医疗隐私 · 保护令 · 抚养费 · 探视权</p>
+                </div>
+            </div>
+            <div class="scene-item">
+                <div class="scene-num">7</div>
+                <div class="scene-content">
+                    <h3>人身伤害</h3>
+                    <div class="en">Personal Injury</div>
+                    <p>申请禁令 · 协助控告 · 赔偿评估 · 民事诉讼</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 承诺 -->
+    <div class="promise">
+        <div class="section-title">我们的承诺</div>
+        <div class="promise-grid">
+            <div class="promise-item">
+                <div class="icon">⚖️</div>
+                <h4>中外律师联合办案</h4>
+                <p>兼顾效率与专业</p>
+            </div>
+            <div class="promise-item">
+                <div class="icon">🗣️</div>
+                <h4>全程中文陪同</h4>
+                <p>无语言障碍</p>
+            </div>
+            <div class="promise-item">
+                <div class="icon">💰</div>
+                <h4>价格透明合理</h4>
+                <p>无隐藏费用</p>
+            </div>
+            <div class="promise-item">
+                <div class="icon">🔒</div>
+                <h4>严格保密合规</h4>
+                <p>保护您的隐私</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部联系 -->
+    <div class="footer">
+        <div class="contact-row">
+            <div class="contact-info">
+                <div class="contact-item"><strong>微信：</strong>TommySLawyer</div>
+                <div class="contact-item"><strong>电话：</strong>150 2677 8678</div>
+                <div class="contact-item"><strong>邮箱：</strong>jianda.shi@sunhold.com.cn</div>
+            </div>
+            <img src="wechat-qr.jpg" style="width:110px;height:110px;border-radius:8px;border:2px solid #c19b60;" alt="微信二维码">
+        </div>
+        <div class="address">上海市浦东新区陆家嘴银城中路501号 上海中心大厦75层</div>
+    </div>
+</body>
+</html>
