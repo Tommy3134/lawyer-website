@@ -302,6 +302,8 @@ def run_liker(count=15, like_rate=0.4, dry_run=False):
     processed = 0
     max_scrolls = count * 3  # 防止无限滚动
     scroll_count = 0
+    handled_y = set()  # 记录已处理过的帖子 Y 坐标（像素级）
+    total_scrolled = 0  # 累计滚动的像素量
 
     while processed < count and scroll_count < max_scrolls:
         screen = take_screenshot()
@@ -312,7 +314,8 @@ def run_liker(count=15, like_rate=0.4, dry_run=False):
 
         if not dots_matches:
             log.info("当前屏幕未找到操作按钮，向下滚动")
-            scroll_down(scale)
+            scroll_amount = scroll_down(scale)
+            total_scrolled += scroll_amount
             scroll_count += 1
             reading_pause()
             continue
@@ -327,6 +330,17 @@ def run_liker(count=15, like_rate=0.4, dry_run=False):
             if processed >= count:
                 break
 
+            # 用绝对 Y 坐标（屏幕 Y + 累计滚动量）判断是否处理过
+            abs_y = dy + total_scrolled
+            already_handled = False
+            for hy in handled_y:
+                if abs(abs_y - hy) < 100:
+                    already_handled = True
+                    break
+            if already_handled:
+                log.info(f"  跳过已处理帖子 ({dx}, {dy})")
+                continue
+
             # 检查附近是否已赞
             is_liked = False
             for lx, ly in liked_positions:
@@ -335,9 +349,11 @@ def run_liker(count=15, like_rate=0.4, dry_run=False):
                     break
             if is_liked:
                 log.info(f"  跳过已赞帖子 ({dx}, {dy})")
+                handled_y.add(abs_y)
                 continue
 
             processed += 1
+            handled_y.add(abs_y)
 
             # 随机决定是否点赞
             if random.random() > like_rate:
@@ -360,7 +376,8 @@ def run_liker(count=15, like_rate=0.4, dry_run=False):
             random_delay(3.0, 8.0)
 
         # 滚动到下一屏
-        scroll_down(scale)
+        scroll_px = scroll_down(scale)
+        total_scrolled += scroll_px
         scroll_count += 1
         reading_pause()
 
@@ -401,11 +418,13 @@ def do_like(dots_x, dots_y, scale, cancel_tpl):
 
 
 def scroll_down(scale):
-    """随机距离向下滚动"""
-    scroll_amount = random.randint(3, 7)  # pyautogui scroll units
+    """随机距离向下滚动，返回估算的像素滚动量"""
+    scroll_amount = random.randint(8, 15)  # pyautogui scroll units
     log.info(f"向下滚动 {scroll_amount} 格")
     pyautogui.scroll(-scroll_amount)
     time.sleep(random.uniform(0.3, 0.6))
+    # 每个 scroll unit 大约对应 40 像素（Retina 下约 80 像素）
+    return int(scroll_amount * 40 * scale)
 
 
 # --- 入口 ---
