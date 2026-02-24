@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacred China Temple Tours — B2B Travel Partner Brochure</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --gold: #C5A55A;
+    --gold-light: #E8D5A3;
+    --dark: #1A1A1A;
+    --charcoal: #2D2D2D;
+    --warm-gray: #F5F0E8;
+    --cream: #FFFDF7;
+    --red: #8B2500;
+    --text: #333;
+    --text-light: #666;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  /* --- COVER PAGE --- */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark) 0%, #2a1810 50%, var(--charcoal) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23C5A55A" stroke-width="0.3" opacity="0.15"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23C5A55A" stroke-width="0.2" opacity="0.1"/></svg>') center/600px no-repeat;
+    opacity: 0.4;
+  }
+
+  .cover-ornament {
+    color: var(--gold);
+    font-size: 48px;
+    letter-spacing: 20px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .cover h1 span {
+    display: block;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-top: 15px;
+  }
+
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--gold-light);
+    margin-top: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .cover-line {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+    position: relative;
+  }
+
+  .cover-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 40px;
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* --- SECTIONS --- */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-dark {
+    background: var(--dark);
+    color: #fff;
+    max-width: 100%;
+  }
+
+  .section-dark .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-warm {
+    background: var(--warm-gray);
+    max-width: 100%;
+  }
+
+  .section-warm .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .section-dark .section-title { color: var(--gold); }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 15px auto 0;
+  }
+
+  .intro-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin-top: 30px;
+  }
+
+  .intro-main p { margin-bottom: 18px; font-size: 15px; }
+
+  .stat-item {
+    text-align: center;
+    padding: 25px 15px;
+    border: 1px solid var(--gold-light);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: rgba(197,165,90,0.05);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-top: 5px;
+  }
+
+  /* Destination cards */
+  .dest-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .dest-header {
+    background: linear-gradient(135deg, var(--dark), #3a2a1a);
+    padding: 35px 40px;
+    color: #fff;
+    position: relative;
+  }
+
+  .dest-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .dest-header .dest-chinese {
+    font-size: 16px;
+    color: var(--gold);
+    letter-spacing: 3px;
+  }
+
+  .dest-header .dest-badge {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 12px;
+    border-radius: 3px;
+  }
+
+  .dest-body { padding: 35px 40px; }
+
+  .dest-body p { font-size: 15px; margin-bottom: 15px; }
+
+  .dest-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .highlight-box {
+    padding: 20px;
+    background: var(--warm-gray);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .highlight-box h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .highlight-box p { font-size: 13px; margin-bottom: 0; color: var(--text-light); }
+
+  /* Itinerary */
+  .itinerary { margin-top: 30px; }
+
+  .itin-day {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .itin-day:last-child { border-bottom: none; }
+
+  .itin-day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 2px;
+  }
+
+  .itin-day-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .itin-day-content p { font-size: 14px; color: var(--text-light); margin-bottom: 0; }
+
+  /* Trade info */
+  .trade-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .trade-box {
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .trade-box h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .trade-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .trade-box li {
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .trade-box li:last-child { border-bottom: none; }
+
+  .trade-box li::before {
+    content: '✓ ';
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Pricing table */
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 14px;
+  }
+
+  .pricing-table th {
+    background: rgba(197,165,90,0.15);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .pricing-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .pricing-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  .price-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 15px;
+    font-style: italic;
+  }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .contact-box h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 15px;
+  }
+
+  .contact-box p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* Print styles */
+  @media print {
+    .cover { page-break-after: always; }
+    .section, .section-dark, .section-warm { page-break-inside: avoid; }
+    body { font-size: 12px; }
+  }
+
+  @media (max-width: 768px) {
+    .intro-columns, .dest-highlights, .trade-grid, .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .cover h1 { font-size: 36px; }
+    .section, .section-dark .section-inner, .section-warm .section-inner {
+      padding: 50px 25px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <div class="cover-ornament">&#9753;</div>
+  <h1>
+    Sacred China
+    <span>Temple & Spiritual Journeys</span>
+  </h1>
+  <div class="cover-line"></div>
+  <p class="cover-tagline">
+    Curated Buddhist temple experiences across China's most sacred mountains and historic urban sanctuaries
+  </p>
+  <p class="cover-subtitle">B2B Travel Partner Brochure 2026</p>
+  <p class="cover-footer">Confidential — For Travel Trade Partners Only</p>
+</div>
+
+<!-- ============ INTRO ============ -->
+<div class="section" id="intro">
+  <h2 class="section-title">Why Sacred China?</h2>
+  <div class="intro-columns">
+    <div class="intro-main">
+      <p>China is home to the world's oldest continuous Buddhist tradition outside India. For over 2,000 years, pilgrims have journeyed to its sacred mountains, ancient temples, and living monasteries seeking wisdom, compassion, and inner peace.</p>
+      <p>Today, a new generation of Western travelers is seeking exactly this — authentic spiritual experiences that go beyond sightseeing. The global wellness tourism market exceeds $800 billion, and spiritual travel is its fastest-growing segment.</p>
+      <p>We offer your agency a turnkey product: professionally managed temple tours combining sacred mountain pilgrimages, urban temple discoveries, meditation retreats, vegetarian cuisine experiences, and cultural immersion — all with English-speaking guides, reliable logistics, and competitive trade pricing.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="stat-item">
+        <div class="stat-number">2,000+</div>
+        <div class="stat-label">Years of Buddhist Heritage</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Sacred Buddhist Mountains</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">UNESCO</div>
+        <div class="stat-label">World Heritage Sites</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DESTINATIONS ============ -->
+<div class="section-warm">
+  <div class="section-inner">
+    <h2 class="section-title">Our Destinations</h2>
+    <p style="text-align:center; max-width:650px; margin:0 auto 40px; color:var(--text-light); font-size:15px;">
+      Four iconic Buddhist sites spanning sacred mountains and cosmopolitan Shanghai — each offering a distinct dimension of China's living spiritual heritage.
+    </p>
+
+    <!-- PUTUO MOUNTAIN -->
+    <div class="dest-card">
+      <div class="dest-header">
+        <h3>Mount Putuo</h3>
+        <span class="dest-chinese">普陀山 · Zhejiang Province</span>
+        <span class="dest-badge">Sacred Island</span>
+      </div>
+      <div class="dest-body">
+        <p>A sacred island in the Zhoushan Archipelago and the earthly abode of Guanyin, the Bodhisattva of Compassion — the most beloved figure in East Asian Buddhism. For over 1,000 years, pilgrims have crossed the sea to this island sanctuary, home to 30 active temples and the iconic 33-meter gilded Nanhai Guanyin statue.</p>
+        <p>The founding legend is irresistible: in the 9th century, a Japanese monk's ship was halted by a miraculous storm as he tried to carry a Guanyin statue home. The statue "refused to leave" — and the island became sacred ground.</p>
+        <div class="dest-highlights">
+          <div class="highlight-box">
+            <h4>Key Sites</h4>
+            <p>Puji Temple, Fayu Temple, Huiji Temple (summit), Nanhai Guanyin Statue, Chaoyin Cave, Thousand-Step Beach</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Experiences</h4>
+            <p>Temple ceremonies, incense offerings, vegetarian monastery meals, coastal meditation walks, sunrise viewing</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Getting There</h4>
+            <p>Ferry from Zhujiajian (Zhoushan) — 15 min fast boat. Zhoushan accessible from Shanghai (4h drive) or Ningbo (2h)</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Best Seasons</h4>
+            <p>April–June and September–November. Guanyin festival dates (lunar 2nd, 6th, 9th month 19th) for cultural immersion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMEI MOUNTAIN -->
+    <div class="dest-card">
+      <div class="dest-header">
+        <h3>Mount Emei</h3>
+        <span class="dest-chinese">峨眉山 · Sichuan Province</span>
+        <span class="dest-badge">UNESCO Heritage</span>
+      </div>
+      <div class="dest-body">
+        <p>A UNESCO World Heritage Site rising to 3,079 meters, Mount Emei is the sacred abode of Samantabhadra, the Bodhisattva of Universal Virtue. Buddhism arrived here in the 1st century AD, making it one of China's earliest Buddhist sites. The Golden Summit, crowned by a 48-meter gold-plated Samantabhadra statue, offers one of the most celebrated sunrise experiences in all of China.</p>
+        <p>The mountain spans subtropical to subalpine zones with over 3,200 plant species — a living encyclopedia of biodiversity alongside 2,000 years of spiritual heritage.</p>
+        <div class="dest-highlights">
+          <div class="highlight-box">
+            <h4>Key Sites</h4>
+            <p>Golden Summit (Jinding), Wannian Temple (Song Dynasty bronze elephant), Baoguo Temple, Qingyin Pavilion, Monkey Zone</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Experiences</h4>
+            <p>Summit sunrise, sea of clouds, temple overnight stays, vegetarian cuisine, hiking trails, meditation retreats</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Getting There</h4>
+            <p>High-speed train from Chengdu: 1–1.5 hours. Cable car to Golden Summit available. Chengdu has major international airport</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Best Seasons</h4>
+            <p>Spring (azaleas), Autumn (clear skies, best sunrise). Winter summit snow is spectacular. Summer is cool retreat season</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JING'AN TEMPLE -->
+    <div class="dest-card">
+      <div class="dest-header">
+        <h3>Jing'an Temple</h3>
+        <span class="dest-chinese">静安寺 · Shanghai</span>
+        <span class="dest-badge">Urban Sanctuary</span>
+      </div>
+      <div class="dest-body">
+        <p>Founded circa 247 AD, Jing'an Temple is nearly 1,800 years old — yet it sits directly on Nanjing West Road, Shanghai's premier boulevard, surrounded by luxury malls and glass towers. The contrast of golden Song Dynasty rooflines against a modern skyline is one of the most striking visual experiences in China.</p>
+        <p>The temple houses a 15-ton silver Sakyamuni Buddha and was meticulously rebuilt in 2010–2014 using traditional methods with Burmese teak. It remains an active Chan (Zen) Buddhist monastery.</p>
+        <div class="dest-highlights">
+          <div class="highlight-box">
+            <h4>Key Sites</h4>
+            <p>Mahavira Hall (silver Buddha), Ashoka Pagoda, Hall of Heavenly Kings, historic Bubbling Spring, adjacent Jing'an Park</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Experiences</h4>
+            <p>Incense offerings, Buddhist ceremonies, Gongdelin vegetarian restaurant (est. 1922), combine with Nanjing Road shopping</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JADE BUDDHA TEMPLE -->
+    <div class="dest-card">
+      <div class="dest-header">
+        <h3>Jade Buddha Temple</h3>
+        <span class="dest-chinese">玉佛禅寺 · Shanghai</span>
+        <span class="dest-badge">Living Monastery</span>
+      </div>
+      <div class="dest-body">
+        <p>Home to two exquisite jade Buddha statues brought from Burma in 1882 — a 1.95-meter seated Buddha carved from a single piece of white jade, and a reclining Buddha depicting the moment of enlightenment. The temple is one of Shanghai's most active Buddhist monasteries with over 70 resident monks.</p>
+        <p>Renovated in 2017 with the seated jade Buddha carefully relocated to a new earthquake-proof hall at ground level, the temple blends preservation with accessibility.</p>
+        <div class="dest-highlights">
+          <div class="highlight-box">
+            <h4>Key Sites</h4>
+            <p>Jade Buddha Hall, Reclining Buddha Chamber, Grand Hall, Sutra-Reciting Hall, calligraphy and Buddhist art collections</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Experiences</h4>
+            <p>Renowned vegetarian restaurant, monk-led temple tours, Buddhist art appreciation, calligraphy workshops, meditation sessions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ SAMPLE ITINERARIES ============ -->
+<div class="section">
+  <h2 class="section-title">Sample Itineraries</h2>
+  <p style="text-align:center; max-width:650px; margin:0 auto 40px; color:var(--text-light); font-size:15px;">
+    All itineraries are fully customizable. We offer FIT, small group (2–12 pax), and large group (12–30 pax) options.
+  </p>
+
+  <!-- Itinerary 1 -->
+  <div class="dest-card">
+    <div class="dest-header">
+      <h3>Sacred Mountains Pilgrimage</h3>
+      <span class="dest-chinese">10 Days · Shanghai → Putuo → Emei → Chengdu</span>
+      <span class="dest-badge">Signature Tour</span>
+    </div>
+    <div class="dest-body">
+      <div class="itinerary">
+        <div class="itin-day">
+          <div class="itin-day-num">Day 1</div>
+          <div class="itin-day-content">
+            <h4>Arrive Shanghai</h4>
+            <p>Airport meet-and-greet, transfer to hotel. Evening orientation walk along the Bund.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 2</div>
+          <div class="itin-day-content">
+            <h4>Shanghai Temples</h4>
+            <p>Morning: Jing'an Temple with guided meditation introduction. Vegetarian lunch at Gongdelin. Afternoon: Jade Buddha Temple, jade Buddha viewing, monk-led tour. Evening: free time or optional Yu Garden visit.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 3</div>
+          <div class="itin-day-content">
+            <h4>Shanghai → Putuo Mountain</h4>
+            <p>Morning transfer to Zhoushan, ferry to Putuo Island. Afternoon: Puji Temple, lotus pond, incense offering ceremony. Overnight on island.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 4</div>
+          <div class="itin-day-content">
+            <h4>Putuo Mountain Full Day</h4>
+            <p>Sunrise at Hundred-Step Beach. Morning: Fayu Temple, hike to Huiji Temple at summit. Afternoon: Nanhai Guanyin Statue, Chaoyin Cave. Vegetarian dinner at monastery. Optional evening chanting ceremony.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 5</div>
+          <div class="itin-day-content">
+            <h4>Putuo → Shanghai → Chengdu</h4>
+            <p>Morning ferry back. Transfer to airport, fly to Chengdu. Evening: Sichuan welcome dinner, Jinli Ancient Street walk.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 6</div>
+          <div class="itin-day-content">
+            <h4>Chengdu → Mount Emei</h4>
+            <p>High-speed train to Emei. Visit Baoguo Temple (gateway temple) and Mount Emei Museum. Afternoon: Qingyin Pavilion, Natural Monkey Zone. Overnight at mountain hotel.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 7</div>
+          <div class="itin-day-content">
+            <h4>Mount Emei — Golden Summit</h4>
+            <p>Early cable car to Golden Summit for sunrise and sea of clouds. Visit Huazang Temple and the 48m Samantabhadra statue. Afternoon: Wannian Temple, view the 1,000-year-old bronze elephant Buddha. Temple stay overnight (optional, standard hotel alternative available).</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 8</div>
+          <div class="itin-day-content">
+            <h4>Mount Emei — Meditation & Nature</h4>
+            <p>Morning meditation session at temple. Guided nature walk through ancient forests. Afternoon: Leshan Giant Buddha (UNESCO, optional add-on). Return to Chengdu.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 9</div>
+          <div class="itin-day-content">
+            <h4>Chengdu Free Day</h4>
+            <p>Optional: Giant Panda Base, Wenshu Monastery, tea house experience, Sichuan cooking class. Farewell vegetarian banquet.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 10</div>
+          <div class="itin-day-content">
+            <h4>Departure</h4>
+            <p>Transfer to Chengdu airport. End of tour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Itinerary 2 -->
+  <div class="dest-card">
+    <div class="dest-header">
+      <h3>Shanghai Spiritual Escape</h3>
+      <span class="dest-chinese">4 Days · Shanghai & Putuo Mountain</span>
+      <span class="dest-badge">Short Break</span>
+    </div>
+    <div class="dest-body">
+      <div class="itinerary">
+        <div class="itin-day">
+          <div class="itin-day-num">Day 1</div>
+          <div class="itin-day-content">
+            <h4>Arrive Shanghai</h4>
+            <p>Airport transfer. Afternoon: Jing'an Temple visit, vegetarian dinner. Ideal for 144-hour visa-free transit passengers.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 2</div>
+          <div class="itin-day-content">
+            <h4>Shanghai → Putuo Mountain</h4>
+            <p>Morning: Jade Buddha Temple. Transfer to Zhoushan, ferry to Putuo. Afternoon: Puji Temple, beach meditation walk. Overnight on island.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 3</div>
+          <div class="itin-day-content">
+            <h4>Putuo Mountain Full Day</h4>
+            <p>Sunrise viewing. Full island tour: three great temples, Nanhai Guanyin, sea caves. Monastery vegetarian meals. Evening return to Shanghai.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 4</div>
+          <div class="itin-day-content">
+            <h4>Departure</h4>
+            <p>Free morning for shopping or Yu Garden. Airport transfer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Itinerary 3 -->
+  <div class="dest-card">
+    <div class="dest-header">
+      <h3>Deep Zen Retreat</h3>
+      <span class="dest-chinese">7 Days · Immersive Meditation & Temple Living</span>
+      <span class="dest-badge">Wellness</span>
+    </div>
+    <div class="dest-body">
+      <div class="itinerary">
+        <div class="itin-day">
+          <div class="itin-day-num">Day 1–2</div>
+          <div class="itin-day-content">
+            <h4>Shanghai Introduction</h4>
+            <p>Arrive Shanghai. Guided temple visits (Jing'an, Jade Buddha). Introduction to Chinese Buddhist philosophy and meditation basics with English-speaking Buddhist scholar. Vegetarian cuisine workshop.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 3–5</div>
+          <div class="itin-day-content">
+            <h4>Mount Emei Temple Retreat</h4>
+            <p>Three nights at a mountain temple. Daily schedule: dawn chanting, morning meditation, vegetarian meals, afternoon dharma talks, nature walks, evening practice. Guided by English-speaking monk or Buddhist teacher.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 6</div>
+          <div class="itin-day-content">
+            <h4>Golden Summit & Reflection</h4>
+            <p>Sunrise at Golden Summit. Closing ceremony. Transfer to Chengdu for integration day — tea ceremony, journaling time, optional panda visit.</p>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-day-num">Day 7</div>
+          <div class="itin-day-content">
+            <h4>Departure</h4>
+            <p>Transfer to Chengdu airport.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRADE INFORMATION ============ -->
+<div class="section-dark">
+  <div class="section-inner">
+    <h2 class="section-title">Trade Partner Information</h2>
+
+    <div class="trade-grid">
+      <div class="trade-box">
+        <h4>What We Provide</h4>
+        <ul>
+          <li>English-speaking Buddhist specialist guides</li>
+          <li>All domestic transport (trains, ferries, transfers)</li>
+          <li>Hotel and temple stay accommodation</li>
+          <li>All entrance fees and cable cars</li>
+          <li>Vegetarian and standard meal arrangements</li>
+          <li>24/7 in-destination emergency support</li>
+          <li>Airport meet-and-greet service</li>
+          <li>Co-brandable marketing materials</li>
+        </ul>
+      </div>
+      <div class="trade-box">
+        <h4>Why Partner With Us</h4>
+        <ul>
+          <li>Direct relationships with temples and monasteries</li>
+          <li>Exclusive access to temple stay experiences</li>
+          <li>Niche product your competitors don't offer</li>
+          <li>High-margin wellness/spiritual segment</li>
+          <li>Impossible to replicate on OTA platforms</li>
+          <li>Growing Western demand for authentic experiences</li>
+          <li>Flexible FIT and group departures</li>
+          <li>FAM trip invitations for qualified agents</li>
+        </ul>
+      </div>
+      <div class="trade-box">
+        <h4>Commission & Pricing</h4>
+        <ul>
+          <li>Net rates provided — mark up at your discretion</li>
+          <li>Recommended retail markup: 20–30%</li>
+          <li>Volume override bonuses available</li>
+          <li>Seasonal rate cards updated quarterly</li>
+          <li>FIT surcharge for solo/couple bookings</li>
+          <li>Group rates from 4 pax</li>
+          <li>Confidential rate sheet on request</li>
+          <li>No hidden fees — all-inclusive net pricing</li>
+        </ul>
+      </div>
+      <div class="trade-box">
+        <h4>Booking & Policies</h4>
+        <ul>
+          <li>Confirmation within 24 hours</li>
+          <li>20% deposit, balance 45 days prior</li>
+          <li>60+ days: full refund (minus admin fee)</li>
+          <li>30–59 days: 50% cancellation fee</li>
+          <li>Under 30 days: 100% cancellation fee</li>
+          <li>Force majeure: full credit or refund</li>
+          <li>Flexible rebooking at no extra charge</li>
+          <li>Professional liability insurance carried</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pricing Table -->
+    <h3 style="font-family:'Playfair Display',serif; color:var(--gold); text-align:center; margin-top:50px; font-size:24px;">Indicative Net Rates (2026)</h3>
+    <p style="text-align:center; color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:25px;">Per person, based on twin share. Confidential trade rates.</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Tour Package</th>
+          <th>Duration</th>
+          <th>2–3 Pax</th>
+          <th>4–8 Pax</th>
+          <th>9+ Pax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sacred Mountains Pilgrimage</td>
+          <td>10 Days</td>
+          <td>$2,480</td>
+          <td>$1,980</td>
+          <td>$1,680</td>
+        </tr>
+        <tr>
+          <td>Shanghai Spiritual Escape</td>
+          <td>4 Days</td>
+          <td>$980</td>
+          <td>$780</td>
+          <td>$620</td>
+        </tr>
+        <tr>
+          <td>Deep Zen Retreat</td>
+          <td>7 Days</td>
+          <td>$2,180</td>
+          <td>$1,780</td>
+          <td>$1,480</td>
+        </tr>
+        <tr>
+          <td>Custom Itinerary</td>
+          <td>Flexible</td>
+          <td colspan="3" style="text-align:center;">Quote on request</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="price-note">* Rates include accommodation, meals, transport, guides, and entrance fees. International flights not included. Single supplement available. Rates valid through December 2026, subject to availability. Contact us for a detailed confidential rate sheet.</p>
+  </div>
+</div>
+
+<!-- ============ UNIQUE SELLING POINTS ============ -->
+<div class="section">
+  <h2 class="section-title">What Sets This Apart</h2>
+  <div class="intro-columns" style="margin-top:30px;">
+    <div>
+      <h4 style="color:var(--gold); font-size:13px; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">For Your Clients</h4>
+      <p style="font-size:15px; margin-bottom:15px;">This isn't temple sightseeing — it's a living encounter with one of the world's great spiritual traditions. Your clients will meditate where monks have practiced for a thousand years, eat vegetarian meals prepared by monastery kitchens, watch sunrise from a sacred summit, and walk paths that pilgrims have followed since the Tang Dynasty.</p>
+      <p style="font-size:15px; margin-bottom:15px;">China's Buddhist heritage is vast, authentic, and largely undiscovered by Western travelers. While everyone has been to Bali and Kyoto, almost no one in the Western market has experienced Putuo Mountain or a temple stay on Mount Emei. Your clients get bragging rights and genuine transformation.</p>
+    </div>
+    <div>
+      <h4 style="color:var(--gold); font-size:13px; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">For Your Business</h4>
+      <p style="font-size:15px; margin-bottom:15px;">Spiritual and wellness travel commands premium pricing with high client satisfaction. This product is impossible to self-book on Booking.com or Expedia — temple stays, monastery access, and English-speaking Buddhist guides require local relationships that only we provide.</p>
+      <p style="font-size:15px;">That means your clients need you, and you need us. No disintermediation risk. High repeat and referral rates. A differentiated product that positions your agency as a specialist, not a commodity seller.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRACTICAL NOTES ============ -->
+<div class="section-warm">
+  <div class="section-inner">
+    <h2 class="section-title">Practical Notes for Agents</h2>
+    <div class="dest-highlights">
+      <div class="highlight-box">
+        <h4>Visa Information</h4>
+        <p>China offers 144-hour visa-free transit for citizens of 54 countries (including US, UK, EU, Australia, Canada) at major ports including Shanghai and Chengdu. For longer stays, standard tourist visa (L visa) required — we provide invitation letters to support applications.</p>
+      </div>
+      <div class="highlight-box">
+        <h4>Client Fitness Level</h4>
+        <p>Shanghai temples: easy, flat walking. Putuo Mountain: moderate (island paths, some stairs). Mount Emei: cable cars available for all key sites; optional hiking for active clients. We adapt itineraries to client fitness.</p>
+      </div>
+      <div class="highlight-box">
+        <h4>Dietary & Cultural</h4>
+        <p>Vegetarian meals are integral to the experience but not mandatory for every meal. We accommodate all dietary needs. Modest dress required at temples (we brief clients in advance). Photography permitted in most areas.</p>
+      </div>
+      <div class="highlight-box">
+        <h4>Language & Connectivity</h4>
+        <p>English-speaking guides accompany all tours. We provide local SIM cards or portable WiFi. WeChat setup assistance included (essential app in China). VPN guidance provided for accessing Western apps.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="section-dark">
+  <div class="section-inner">
+    <h2 class="section-title">Start the Conversation</h2>
+    <p style="text-align:center; color:rgba(255,255,255,0.7); max-width:550px; margin:0 auto 35px; font-size:15px;">
+      We'd love to explore a partnership. Request a confidential rate sheet, discuss a FAM trip, or build a custom itinerary for your clients.
+    </p>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h4>Trade Inquiries</h4>
+        <p>Email: <strong>[trade@your-domain.com]</strong></p>
+        <p>WhatsApp: <strong>[+86 your-number]</strong></p>
+        <p>WeChat ID: <strong>[your-wechat-id]</strong></p>
+        <p style="margin-top:15px; font-size:13px; color:rgba(255,255,255,0.5);">Response within 24 hours, 7 days a week</p>
+      </div>
+      <div class="contact-box">
+        <h4>Next Steps</h4>
+        <p>1. Request our confidential net rate sheet</p>
+        <p>2. Schedule a 30-minute video introduction</p>
+        <p>3. Receive co-brandable client-facing materials</p>
+        <p>4. Book a FAM trip to experience it yourself</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:60px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1);">
+      <p style="font-family:'Playfair Display',serif; font-size:22px; color:var(--gold); margin-bottom:10px;">Sacred China</p>
+      <p style="font-size:12px; color:rgba(255,255,255,0.3); letter-spacing:3px; text-transform:uppercase;">Temple & Spiritual Journeys</p>
+      <p style="font-size:11px; color:rgba(255,255,255,0.2); margin-top:20px;">© 2026 Sacred China. This document is confidential and intended for travel trade partners only.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
